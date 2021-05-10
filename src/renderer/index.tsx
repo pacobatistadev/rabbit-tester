@@ -1,6 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import Root from './sections/Root'
+import { Provider } from "react-redux";
+import store from "@redux/store";
 
-ReactDOM.render(<Root />, document.getElementById('app'))
+import Root from '@sections/Root'
+
+ReactDOM.render((
+  <Provider store={store}>
+    <Root />
+  </Provider>
+), document.getElementById('app'))

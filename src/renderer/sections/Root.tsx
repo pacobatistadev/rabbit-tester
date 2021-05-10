@@ -1,21 +1,30 @@
-import { AppBar, Toolbar, IconButton, Typography, Button } from '@material-ui/core'
-import { Menu as MenuIcon } from '@material-ui/icons'
-import React from 'react'
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
 
-const Root: React.FC = () => {
+import AppBar from './Appbar'
+import Drawer from './Drawer'
+import Main from './Main'
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    height: '100vh',
+    width: '100vw'
+  },
+}));
+
+export default function ClippedDrawer() {
+  const classes = useStyles();
+
   return (
-    <AppBar position="static">
-      <Toolbar>
-        <IconButton edge="start" color="inherit" aria-label="menu">
-          <MenuIcon />
-        </IconButton>
-        <Typography variant="h6">
-          News
-        </Typography>
-        <Button color="inherit">Login</Button>
-      </Toolbar>
-    </AppBar>
-  )
+    <div className={classes.root}>
+      <CssBaseline />
+      <AppBar />
+      <Drawer />
+      <Main />
+    </div>
+  );
 }
-
-export default Root;

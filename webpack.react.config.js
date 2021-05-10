@@ -5,8 +5,12 @@ module.exports = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
     mainFields: ['main', 'module', 'browser'],
+    alias: {
+      '@redux': path.resolve(__dirname, 'src/renderer/redux'),
+      '@sections': path.resolve(__dirname, 'src/renderer/sections'),
+    }
   },
-  entry: './src/renderer/index.tsx',
+  entry: ['babel-polyfill', './src/renderer/index.tsx'],
   target: 'electron-renderer',
   devtool: 'source-map',
   module: {

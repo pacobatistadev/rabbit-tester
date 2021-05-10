@@ -56,7 +56,7 @@ reactProcess.stdout.pipe(process.stdout)
 
 
 
-if (fs.existsSync(path.join(__mainDir, 'dist'))) {
+if (fs.existsSync(path.join(__mainDir, 'build'))) {
   spawnElectronProcess()
 }
 
